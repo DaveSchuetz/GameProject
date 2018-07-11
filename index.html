@@ -3,13 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Schuetz Tower of Hanoi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    
+    <link href="https://fonts.googleapis.com/css?family=Ruluko|Shrikhand" rel="stylesheet"
 </head>
 <body>
-    
+    <header>
+        <!--HEader that has the title of the page  -->
+        <h1>Tower of Hanoi</h1>
+    </header>
+    <div class="tracker">
+        <!-- Counter at the top of the page also a portion that tells the minimum amount of moves -->
+        <div id="counter"></div>
+        <div id="minimum"></div>
+    </div>
+    <div class="board">
+        <!-- The game board will need to have three towers that the disks can move around -->
+        <div class="tower"></div>
+        <div class="tower"></div>
+        <div class="tower"></div>
+    </div>
+    <div>
+        <!-- Rules to be listed under the game board -->
+        <h2>Rules</h2>
+        <ol><p>The objective of Tower of Hanoi is to move the disks from the tower on the left to the tower on the right. There are 3 simple rules</p>
+            <li>Only one disk can be moved at a time</li>
+            <li>Each move consists of moving the top disk from one tower to the top of another tower,  or an empty tower</li>
+            <li>No larger disk may be placed on top of a smaller disk</li>
+        </ol>
+    </div>
+    <footer>
+        <!-- A footer for links and signature -->
+        <h5>Created by Dave Schuetz 2018</h5>
+    </footer>
 
     <script src="main.js"></script>
 </body>
