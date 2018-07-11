@@ -33,13 +33,14 @@ header{
     align-items: center;
     height:600px;
     width:800px;
-    background-color: antiquewhite;
+    background-color: rgba(206, 206, 206,.8);
     position: relative;
     left:100px;
+    border: groove rgb(255, 255, 255) 1px;
 }
 .tower{
     width: 260px;
-    background-image: linear-gradient(90deg,rgba(0,255,0,0) 115px, #9f834d 115px, #9f834d 145px, rgba(0,0,255,0) 145px);
+    background-image: linear-gradient(90deg,rgba(0,0,0,0) 115px, #9f834d 115px, #9f834d 145px, rgba(0,0,0,0) 145px);
     height:550px;
     border-bottom: solid #9f834d 15px;
     display: flex;
@@ -62,11 +63,11 @@ h2{
 }
 li{
     list-style-type: none;
-    margin: 2px 15px;
+    margin: 5px 15px;
 }
 .rules {
     font-size: 20px;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.576);
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.3);
     background-color: #0B3303;
     border: groove rgb(255, 255, 255) 5px;
     border-radius: 20px;
@@ -92,4 +93,16 @@ footer{
     height: 40px;
     width: 210px;
     background-color: teal;
+}
+.reset{
+    text-align: center;
+    margin: 10px auto;
+    padding:5px;
+    background-color: #0B3303;
+    border: groove rgb(255, 255, 255) 1px;
+    border-radius: 20px;
+    width: 100px;
+    color:white;
+    position: relative;
+    left:450px;
 }
