@@ -95,6 +95,11 @@ footer{
     width: 210px;
     background-color: teal;
 }
+#disk4{
+    height: 40px;
+    width: 185px;
+    background-color: pink;
+}
 .reset{
     text-align: center;
     margin: 10px auto;

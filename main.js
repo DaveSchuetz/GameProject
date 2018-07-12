@@ -1,5 +1,14 @@
 // setting the towers and disk vars
 const towers = document.querySelectorAll('.tower')
+const diskSelector = 3
+const diskOrder = []
+for (i = 1; i <= diskSelector; i++){
+    let diskDiv = document.createElement('div')
+    diskDiv.id = 'disk' + i
+    diskDiv.className = 'disk'
+    towers[0].appendChild(diskDiv)
+    diskOrder.push(diskDiv.id)
+}
 const disks = document.querySelectorAll('.disk')
 let gameTower = [ [], [], [] ]
 
@@ -52,6 +61,8 @@ towers[1].addEventListener('click', () => {
     if (active != false){
         gameTower[1].push(active)
         active.style.borderWidth = '1px'
-        active = false
+        gameTower[0].pop()
+
     }
+    active = false
 })
