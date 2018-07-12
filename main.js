@@ -1,13 +1,14 @@
 // setting the towers and disk vars
 const towers = document.querySelectorAll('.tower')
 const diskSelector = 3
-const diskOrder = []
+// const diskOrder = []
+//Creating using DOM elements
 for (i = 1; i <= diskSelector; i++){
     let diskDiv = document.createElement('div')
     diskDiv.id = 'disk' + i
     diskDiv.className = 'disk'
     towers[0].appendChild(diskDiv)
-    diskOrder.push(diskDiv.id)
+    // diskOrder.push(diskDiv.id)
 }
 const disks = document.querySelectorAll('.disk')
 let gameTower = [ [], [], [] ]
@@ -26,7 +27,7 @@ document.getElementById('minimum').textContent = minMoves
 
 //Click event to show highlighted item
 let active = false
-lastTower1.addEventListener('click',() => {
+lastTower1.addEventListener('click', () => {
     if (lastTower1.style.borderWidth != '10px'){
         lastTower1.style.borderWidth = '10px'
         active = lastTower1
@@ -59,10 +60,12 @@ lastTower1.addEventListener('click',() => {
 // moving to new tower
 towers[1].addEventListener('click', () => {
     if (active != false){
-        gameTower[1].push(active)
-        active.style.borderWidth = '1px'
+        gameTower[1].push(lastTower1)
+        lastTower1.style.borderWidth = '1px'
         gameTower[0].pop()
-
+        towers[1].appendChild(document.getElementById('disk3'))
+        lastTower1 = gameTower[0][gameTower[0].length - 1]
+        active = false
     }
-    active = false
+    towers[1].removeEventListener('click', () => {active = false})
 })
