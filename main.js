@@ -20,7 +20,7 @@ let active = false
 lastTower1.addEventListener('click',() => {
     if (lastTower1.style.borderWidth != '10px'){
         lastTower1.style.borderWidth = '10px'
-        active = true
+        active = lastTower1
     }else{
         lastTower1.style.borderWidth = '1px'
         active = false
@@ -47,3 +47,11 @@ lastTower1.addEventListener('click',() => {
 //     }
 // })
 
+// moving to new tower
+towers[1].addEventListener('click', () => {
+    if (active != false){
+        gameTower[1].push(active)
+        active.style.borderWidth = '1px'
+        active = false
+    }
+})
