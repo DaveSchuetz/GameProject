@@ -10,21 +10,40 @@ let lastTower1 = gameTower[0][gameTower[0].length - 1]
 let lastTower2 = gameTower[1][gameTower[1].length - 1]
 let lastTower3 = gameTower[2][gameTower[2].length - 1]
 
+//Showing minimum moves on board
+let minMoves = document.getElementById('minimum')
+minMoves = 2 ** disks.length - 1
+document.getElementById('minimum').textContent = minMoves
 
-
-
+//Click event to show highlighted item
 let active = false
-disks[2].addEventListener('click',() => {
-    if (disks[2].style.borderWidth != '10px'){
-        disks[2].style.borderWidth = '10px'
+lastTower1.addEventListener('click',() => {
+    if (lastTower1.style.borderWidth != '10px'){
+        lastTower1.style.borderWidth = '10px'
         active = true
     }else{
-        disks[2].style.borderWidth = '1px'
+        lastTower1.style.borderWidth = '1px'
         active = false
     }
 })
 
+// lastTower2.addEventListener('click',() => {
+//     if (lastTower2.style.borderWidth != '10px'){
+//         lastTower2.style.borderWidth = '10px'
+//         active = true
+//     }else{
+//         lastTower2.style.borderWidth = '1px'
+//         active = false
+//     }
+// })
 
-
-
+// lastTower1.addEventListener('click',() => {
+//     if (lastTower3.style.borderWidth != '10px'){
+//         lastTower3.style.borderWidth = '10px'
+//         active = true
+//     }else{
+//         lastTower3.style.borderWidth = '1px'
+//         active = false
+//     }
+// })
 

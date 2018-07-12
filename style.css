@@ -40,7 +40,7 @@ header{
 }
 .tower{
     width: 260px;
-    background-image: linear-gradient(90deg,rgba(0,0,0,0) 115px, #9f834d 115px, #9f834d 145px, rgba(0,0,0,0) 145px);
+    background-image: linear-gradient(90deg,rgba(0, 0, 0, 0) 115px, #9f834d 115px, #9f834d 145px, rgba(0,0,0,0) 145px);
     height:550px;
     border-bottom: solid #9f834d 15px;
     display: flex;
@@ -53,6 +53,7 @@ header{
     text-shadow: 2px 2px rgb(114, 113, 113);
     font-size: 20px;
     text-align: center;
+    margin: 0 0 4px 0;
 }
 h2{
     color: white;
