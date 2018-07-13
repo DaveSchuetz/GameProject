@@ -78,6 +78,7 @@ li{
     background-color: #0B3303;
     border: groove rgb(255, 255, 255) 5px;
     border-radius: 20px;
+    padding: 5px 15px;
 }
 footer{
     background-color: rgba(11, 51, 3, 0.2)
