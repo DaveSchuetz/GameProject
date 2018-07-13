@@ -50,7 +50,7 @@ tower1.addEventListener('click', actions)
 tower2.addEventListener('click', actions)
 tower3.addEventListener('click', actions)
 //winner alert
-function winner() {if (tower3.childElementCount === 3){
+function winner() {if (tower3.childElementCount === 4){
     alert(`Congratulations!!! You completed the tower in ${counter} number of moves`)
     tower3.removeEventListener('click', actions)
 }}
