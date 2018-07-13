@@ -26,6 +26,12 @@ header{
     border: groove rgb(255, 255, 255) 5px;
     border-radius: 20px;
 }
+.numDisks{
+    background-color: #0B3303;
+    color:white;
+    margin: 25px 25px;
+    border: none;
+}
 .board{
     display:flex;
     flex-direction: row;
@@ -48,7 +54,7 @@ header{
     align-items: center;
     border-radius: 20px;
 }
-#counter, #minimum {
+#counter, #minimum, .numdisks {
     font-family: 'Roboto Mono', monospace;
     text-shadow: 2px 2px rgb(114, 113, 113);
     font-size: 20px;
@@ -96,6 +102,22 @@ footer{
 #disk4{
     width: 185px;
     background-color: pink;
+}
+#disk5{
+    width: 160px;
+    background-color: skyblue;
+}
+#disk6{
+    width: 135px;
+    background-color: rebeccapurple;
+}
+#disk7{
+    width: 110px;
+    background-color: red;
+}
+#disk8{
+    width: 85px;
+    background-color: orange;
 }
 .reset{
     text-align: center;

@@ -1,10 +1,11 @@
 // setting the towers and disk vars
+
 const tower1 = document.querySelector('#first')
 const tower2 = document.querySelector('#second')
 const tower3 = document.querySelector('#third')
 const diskSelector = 3
+
 const diskOrder = []
-let gameTower = [ [], [], [] ]
 //Creating using DOM elements
 for (i = 1; i <= diskSelector; i++){
     let diskDiv = document.createElement('div')
@@ -26,7 +27,9 @@ let counter = 0
 let active = false
 
 let actions = function(){
-    if (active === this.lastChild){
+    if (active === false && this.childElementCount === 0){
+        return
+    }else if (active === this.lastChild){
         this.lastChild.style.borderWidth = '1px'
         active = false
     }else if (active === false){

@@ -14,11 +14,21 @@
         <h1>Tower of Hanoi</h1>
     </header>
     <div class="tracker">
+        <p>Choose Disks</br>
+            <select id = "drop" class = "numDisks" onchange="diskLoad()">
+            <option id ="d3" selected>3</option>
+            <option id ="d4">4</option>
+            <option id ="d5">5</option>
+            <option id ="d6">6</option>
+            <option id ="d7">7</option>
+            <option id ="d8">8</option>
+            </select>
+        </p>
         <!-- Counter at the top of the page also a portion that tells the minimum amount of moves -->
         <div><p>Moves made</p>
             <div id="counter">0</div>
         </div>
-        <div><p>Minimum moves required</p>
+        <div><p>Minimum moves to solve</p>
             <div id="minimum">0</div>
         </div>
     </div>
