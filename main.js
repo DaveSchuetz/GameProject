@@ -24,60 +24,32 @@ let counter = 0
 
 //Click event to show highlighted item
 let active = false
-tower1.addEventListener('click', () => {
-    if (active === tower1.lastChild){
-        tower1.lastChild.style.borderWidth = '1px'
+
+let actions = function(){
+    if (active === this.lastChild){
+        this.lastChild.style.borderWidth = '1px'
         active = false
     }else if (active === false){
-        tower1.lastChild.style.borderWidth = '10px'
-        active = tower1.lastChild
-    }else if (active.offsetWidth < tower1.lastChild.offsetWidth || tower1.childElementCount === 0){
+        this.lastChild.style.borderWidth = '10px'
+        active = this.lastChild
+    }else if (active.offsetWidth < this.lastChild.offsetWidth || this.childElementCount === 0){
         active.style.borderWidth = '1px'
-        tower1.appendChild(active)
+        this.appendChild(active)
         counter =counter + 1
         document.getElementById('counter').textContent = counter
-        active = false
-    }else{
-        active.style.borderWidth = '1px'
-        active = false}
-})
-tower2.addEventListener('click', () => {
-    if (active === tower2.lastChild){
-        tower2.lastChild.style.borderWidth = '1px'
-        active = false
-    }else if (active === false){
-        tower2.lastChild.style.borderWidth = '10px'
-        active = tower2.lastChild
-    }else if (active.offsetWidth < tower2.lastChild.offsetWidth || tower2.childElementCount === 0){
-        active.style.borderWidth = '1px'
-        tower2.appendChild(active)
-        counter =counter + 1
-        document.getElementById('counter').textContent = counter
-        active = false
-    }else{
-        active.style.borderWidth = '1px'
-        active = false}
-})
-tower3.addEventListener('click', () => {
-    if (active === tower3.lastChild){
-        tower3.lastChild.style.borderWidth = '1px'
-        active = false
-    }else if (active === false){
-        tower3.lastChild.style.borderWidth = '10px'
-        active = tower3.lastChild
-    }else if (active.offsetWidth < tower3.lastChild.offsetWidth || tower3.childElementCount === 0){
-        active.style.borderWidth = '1px'
-        tower3.appendChild(active)
-        counter =counter + 1
-        document.getElementById('counter').textContent = counter
-        active = false
         winner()
+        active = false
     }else{
         active.style.borderWidth = '1px'
         active = false}
-})
+}
+tower1.addEventListener('click', actions)
+tower2.addEventListener('click', actions)
+tower3.addEventListener('click', actions)
+//winner alert
 function winner() {if (tower3.childElementCount === 3){
     alert(`Congratulations!!! You completed the tower in ${counter} number of moves`)
+    tower3.removeEventListener('click', actions)
 }}
 
 let rstBtn = document.querySelector('.reset')
