@@ -3,27 +3,31 @@
 const tower1 = document.querySelector('#first')
 const tower2 = document.querySelector('#second')
 const tower3 = document.querySelector('#third')
-const diskSelector = 3
+let diskSelector = 0
+let minMoves = 0
 
-const diskOrder = []
 //Creating using DOM elements
-for (i = 1; i <= diskSelector; i++){
+function build(){
+    const diskDrop = document.getElementById('drop')
+    diskSelector = diskDrop.options[diskDrop.selectedIndex].value
+    for (i = 1; i <= diskSelector; i++){
+        // for loop to build the disks
     let diskDiv = document.createElement('div')
     diskDiv.id = 'disk' + i
     diskDiv.className = 'disk'
     tower1.appendChild(diskDiv)
-    diskOrder.push(diskDiv.id)
-}
+    minMoves = 2 ** diskSelector - 1
+    document.getElementById('minimum').textContent = minMoves
+    }}build()
 
 //Showing minimum moves on board
-let minMoves = 2 ** diskOrder.length - 1
-document.getElementById('minimum').textContent = minMoves
+
 // move counter
 let counter = 0
 
 
 
-//Click event to show highlighted item
+//Click event to show highlighted item variable needed to hold a true false value
 let active = false
 
 let actions = function(){
