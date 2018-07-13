@@ -80,4 +80,8 @@ function winner() {if (tower3.childElementCount === 3){
     alert(`Congratulations!!! You completed the tower in ${counter} number of moves`)
 }}
 
+let rstBtn = document.querySelector('.reset')
+rstBtn.addEventListener('click', () =>{
+    location.reload()
+})
 
