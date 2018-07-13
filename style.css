@@ -1,0 +1,111 @@
+html {
+    background-image: linear-gradient(-45deg, rgb(139, 139, 139), rgba(153, 153, 153, 0.576));
+    background-size: 10px 10px;
+}
+body{
+    width:  1000px;
+    margin: auto;
+    font-family: 'Ruluko', sans-serif;
+    color: white;
+}
+header{
+    color: white;
+    font-family: 'Shrikhand', cursive;
+    font-size:30px;
+    text-align: center;
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.576);
+}
+.tracker{
+    position: relative;
+    left: 550px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #0B3303;
+    width:400px;
+    border: groove rgb(255, 255, 255) 5px;
+    border-radius: 20px;
+}
+.board{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height:600px;
+    width:800px;
+    background-color: rgba(206, 206, 206,.8);
+    position: relative;
+    left:100px;
+    border: groove rgb(255, 255, 255) 1px;
+}
+.tower{
+    width: 260px;
+    background-image: linear-gradient(90deg,rgba(0, 0, 0, 0) 115px, #9f834d 115px, #9f834d 145px, rgba(0,0,0,0) 145px);
+    height:550px;
+    border-bottom: solid #9f834d 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border-radius: 20px;
+}
+#counter, #minimum {
+    font-family: 'Roboto Mono', monospace;
+    text-shadow: 2px 2px rgb(114, 113, 113);
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 4px 0;
+}
+h2{
+    color: white;
+    font-family: 'Shrikhand', cursive;
+    font-size:30px;
+    text-align: center;
+    text-shadow: 5px 5px rgba(0, 0, 0, 0.576);
+}
+li{
+    list-style-type: none;
+    margin: 5px 15px;
+}
+.rules {
+    font-size: 20px;
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.3);
+    background-color: #0B3303;
+    border: groove rgb(255, 255, 255) 5px;
+    border-radius: 20px;
+}
+footer{
+    background-color: rgba(11, 51, 3, 0.2)
+}
+.disk{
+    border: solid black 1px;
+    border-radius:50px;
+    height: 40px;
+}
+#disk1{
+    width: 260px;
+    background-color: green;
+}
+#disk2{
+    width: 235px;
+    background-color: yellow;
+}
+#disk3{
+    width: 210px;
+    background-color: teal;
+}
+#disk4{
+    width: 185px;
+    background-color: pink;
+}
+.reset{
+    text-align: center;
+    margin: 10px auto;
+    padding:5px;
+    background-color: #0B3303;
+    border: groove rgb(255, 255, 255) 1px;
+    border-radius: 20px;
+    width: 100px;
+    color:white;
+    position: relative;
+    left:450px;
+}
