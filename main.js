@@ -66,11 +66,11 @@ function winner() {if (tower3.childElementCount === 3){
         modal:true,
         buttons:{
             Ok: function() {
-                $( this ).dialog( 'close', newBuild() );
+                $( this ).dialog( 'close', newGame() );
               }}
     })
 }}
-function newBuild(){
+function newGame(){
     $('.disk').remove()
     counter = 0
     document.getElementById('counter').textContent = counter
