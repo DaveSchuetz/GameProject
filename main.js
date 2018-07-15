@@ -3,19 +3,26 @@
 const tower1 = document.querySelector('#first')
 const tower2 = document.querySelector('#second')
 const tower3 = document.querySelector('#third')
-const diskSelector = 4
+let diskSelector = 0
+//Showing minimum moves on board
+let minMoves = 2 ** diskSelector - 1
+document.getElementById('minimum').textContent = minMoves
 
 //Creating using DOM elements
-for (i = 1; i <= diskSelector; i++){
+function build(){
+    const diskDrop = document.getElementById('drop')
+    diskSelector = diskDrop.options[diskDrop.selectedIndex].value
+    for (i = 1; i <= diskSelector; i++){
+        // for loop to build the disks
     let diskDiv = document.createElement('div')
     diskDiv.id = 'disk' + i
     diskDiv.className = 'disk'
     tower1.appendChild(diskDiv)
-}
+    minMoves = 2 ** diskSelector - 1
+    document.getElementById('minimum').textContent = minMoves
+    }}build()
 
-//Showing minimum moves on board
-let minMoves = 2 ** diskSelector - 1
-document.getElementById('minimum').textContent = minMoves
+
 // move counter
 let counter = 0
 
@@ -50,13 +57,15 @@ tower1.addEventListener('click', actions)
 tower2.addEventListener('click', actions)
 tower3.addEventListener('click', actions)
 //winner alert
-function winner() {if (tower3.childElementCount === diskSelector){
+function winner() {if (tower3.childElementCount == diskSelector){
     alert(`Congratulations!!! You completed the tower in ${counter} number of moves`)
     tower3.removeEventListener('click', actions)
 }}
 //reset the game
-let rstBtn = document.querySelector('.reset')
-rstBtn.addEventListener('click', () =>{
-    location.reload()
-})
-
+function newGame(){
+    $('.disk').remove()
+    counter = 0
+    document.getElementById('counter').textContent = counter
+    build()
+    tower3.addEventListener('click', actions)
+}
