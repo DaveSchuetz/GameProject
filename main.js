@@ -54,7 +54,7 @@ tower1.addEventListener('click', actions)
 tower2.addEventListener('click', actions)
 tower3.addEventListener('click', actions)
 //winner alert
-function winner() {if (tower3.childElementCount === 3){
+function winner() {if (tower3.childElementCount == diskSelector){
     const endGame = document.getElementById('complete')
     let para = document.createElement('p')
     para.id = 'winner'
