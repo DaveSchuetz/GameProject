@@ -3,7 +3,7 @@
 const tower1 = document.querySelector('#first')
 const tower2 = document.querySelector('#second')
 const tower3 = document.querySelector('#third')
-const diskSelector = 8
+const diskSelector = 4
 
 //Creating using DOM elements
 for (i = 1; i <= diskSelector; i++){
