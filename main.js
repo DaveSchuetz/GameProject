@@ -55,12 +55,25 @@ tower2.addEventListener('click', actions)
 tower3.addEventListener('click', actions)
 //winner alert
 function winner() {if (tower3.childElementCount === 3){
-    alert(`Congratulations!!! You completed the tower in ${counter} number of moves`)
-    tower3.removeEventListener('click', actions)
+    const endGame = document.getElementById('complete')
+    let para = document.createElement('p')
+    para.id = 'winner'
+    endGame.appendChild(para)
+    if (counter === minMoves){
+        document.getElementById('winner').textContent = `You beat the game in ${counter} moves, which is the fewest number of moves possible!`
+    }else{`You beat the game in ${counter} moves! Try to do it again in fewer moves. The fewest to solve is ${minMoves}`}
+    $('#complete').dialog({
+        modal:true,
+        buttons:{
+            Ok: function() {
+                $( this ).dialog( 'close', newBuild() );
+              }}
+    })
 }}
-
-let rstBtn = document.querySelector('.reset')
-rstBtn.addEventListener('click', () =>{
-    location.reload()
-})
-
+function newBuild(){
+    $('.disk').remove()
+    counter = 0
+    document.getElementById('counter').textContent = counter
+    build()
+    tower3.addEventListener('click', actions)
+}

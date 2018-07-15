@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Ruluko|Shrikhand" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 </head>
 <body>
     <header>
@@ -15,7 +17,7 @@
     </header>
     <div class="tracker">
         <p>Choose Disks</br>
-            <select id = "drop" class = "numDisks" onchange="build()">
+            <select id = "drop" class = "numDisks" onchange="newBuild()">
             <option id ="d3" selected>3</option>
             <option id ="d4">4</option>
             <option id ="d5">5</option>
@@ -33,6 +35,9 @@
         </div>
     </div>
     <h2>Game</h2>
+    <div = id="complete">
+
+    </div>
     <div class="board">
         <!-- The game board will need to have three towers that the disks can move around -->
         <div class="tower" id="first">
@@ -46,7 +51,7 @@
         </div>
     </div>
     <!-- reset button -->
-    <button class="reset">Reset</button>
+    <button class="reset" onclick="newBuild()">Reset</button>
     <h2>How to Play</h2>
     <div class="rules">
         <!-- Rules to be listed under the game board -->

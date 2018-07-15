@@ -61,6 +61,12 @@ header{
     text-align: center;
     margin: 0 0 4px 0;
 }
+#complete{
+    font-size: 20px;
+    text-shadow: 2px 2px rgb(114, 113, 113);
+    background-color: #0B3303;
+
+}
 h2{
     color: white;
     font-family: 'Shrikhand', cursive;
