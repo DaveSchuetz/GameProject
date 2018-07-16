@@ -58,7 +58,7 @@ tower2.addEventListener('click', actions)
 tower3.addEventListener('click', actions)
 //winner alert
 function winner() {if (tower3.childElementCount == diskSelector){
-    alert(`Congratulations!!! You completed the tower in ${counter} number of moves`)
+    alert(`Congratulations!!! You moved all the disks in ${counter} moves! The minimum number of moves required to be finish a tower of ${diskSelector} disks is ${minMoves}.`)
     tower3.removeEventListener('click', actions)
 }}
 //reset the game
@@ -67,5 +67,6 @@ function newGame(){
     counter = 0
     document.getElementById('counter').textContent = counter
     build()
+    active = false
     tower3.addEventListener('click', actions)
 }
