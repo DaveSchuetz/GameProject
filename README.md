@@ -1,4 +1,4 @@
-# GameProject
+# Tower of Hanoi - Vanilla JS Game
 
 Tower of Hanoi is a logic game where you must move a series of disks from tower a to tower c. You are only allowed to move one disk at a time and a larger disk may not be placed on top of a smaller disk.
 
