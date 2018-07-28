@@ -1,18 +1,11 @@
-# GameProject
+# Tower of Hanoi - Vanilla JS Game
 
-The project is a recreation of Towers of Hanoi game.
+Tower of Hanoi is a logic game where you must move a series of disks from tower a to tower c. You are only allowed to move one disk at a time and a larger disk may not be placed on top of a smaller disk.
 
-The game objective is to move a number of disks from the left peg, or tower, to the right peg. You can only move one disk at a time and a larger disk may never be put on top of a smaller disk.
+The goal was to build the game with as much vanilla JS as possible. I also chose to use my own CSS instead of a library like bootstrap.
 
-When the page loads, it will initiall load with 4 disks. There is a board that will show the minimum number of moves it will take to clear the board. The game will keep track of every move that you make.
+While creating the CSS, there was an issue of how to create the towers. I did not want to right away find an image and set as the background, so what I ended up doing was to create the background with a mostly invisible gradient, and leaving the middle as a solid color. I then placed the disks in the on the tower as HTML children and had them centered using flex-box.
 
-If you click anywhere on the tower, you will grab or drop a disk.
+While building the JS actions, I encountered an issue where I could click on the disk and move it to the tower, but once it moved, the first click event was not being called again. I remedied this by only having one click event that was called by all of the listeners on each tower. Then by using an active boolean variable, ran through an if-else check list that would determine what action, if any , should be taken. This also helped to make the code DRY - Don't Repeat Yourself.
 
-Once the disks are on the tower in order, it will list the number of move taken.
-
-The project was written with CSS HTML and Javascript.
-
-
-Had a few hard issues that required extra attention. While styling the 'towers' there was an issue with how to create them. Instead of using another appication and setting it as a BG image, I made the posts by making a background with a linear gradient. This allowed me to create an image at the exact pixels I wanted.
-
-Another issue came with click events. There was a problem with how the events were interacting. If I clicked on one, the other worked, but it was not allowing me to click, and was running the second event when clicking on the item again. I remedied this by having the click evens all call the same function and ran through some if-else statements.
+I did stray away from vanilla JS for the reset, and disk change action. I needed to resolve an issue that if the player changed the number of disks in the middle of a game, it would make sure to empty the board completely. To do this with JS alone, would have required three statements checking each of the towers for child elements, then removing them one at a time. Not very DRY, and even the statements themselves were cumbersome. I incorporated jQuery, there is a .remove() function that can be used to remove all children of a specific element or class in one line. I used that to make sure the board was empty before rebuilding with the new number of requested disks. With it in place, I also used it as the reset button of the game, DRY.
