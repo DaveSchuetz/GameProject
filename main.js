@@ -25,6 +25,7 @@ function build(){
     }build()
 
 let actions = function(){
+    //Stop console message from appearing with empty towers
     if (active === false && this.childElementCount === 0){
         return
     }else if (active === this.lastChild){
@@ -44,6 +45,7 @@ let actions = function(){
         active.style.borderWidth = '1px'
         active = false}
 }
+//The listeners are on the parents
 tower1.addEventListener('click', actions)
 tower2.addEventListener('click', actions)
 tower3.addEventListener('click', actions)
@@ -69,5 +71,6 @@ function newGame(){
     counter = 0
     document.getElementById('counter').textContent = counter
     build()
+
     tower3.addEventListener('click', actions)
 }
