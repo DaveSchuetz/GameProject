@@ -5,6 +5,10 @@ const tower2 = document.querySelector('#second')
 const tower3 = document.querySelector('#third')
 let diskSelector = 0
 let minMoves = 0
+let counter = 0
+
+//Click event to show highlighted item variable needed to hold a true false value
+let active = false
 
 //Creating using DOM elements
 function build(){
@@ -12,23 +16,13 @@ function build(){
     diskSelector = diskDrop.options[diskDrop.selectedIndex].value
     for (i = 1; i <= diskSelector; i++){
         // for loop to build the disks
-    let diskDiv = document.createElement('div')
-    diskDiv.id = 'disk' + i
-    diskDiv.className = 'disk'
-    tower1.appendChild(diskDiv)
+        let diskDiv = document.createElement('div')
+        diskDiv.id = 'disk' + i
+        diskDiv.className = 'disk'
+        tower1.appendChild(diskDiv)}
     minMoves = 2 ** diskSelector - 1
     document.getElementById('minimum').textContent = minMoves
-    }}build()
-
-//Showing minimum moves on board
-
-// move counter
-let counter = 0
-
-
-
-//Click event to show highlighted item variable needed to hold a true false value
-let active = false
+    }build()
 
 let actions = function(){
     if (active === false && this.childElementCount === 0){
@@ -55,23 +49,23 @@ tower2.addEventListener('click', actions)
 tower3.addEventListener('click', actions)
 //winner alert
 function winner() {if (tower3.childElementCount == diskSelector){
-    const endGame = document.getElementById('complete')
+    const $modal = $('#modal')
+    const $endGame = $('#modal-textbox')
+    $modal.css('display', 'block')
     let para = document.createElement('p')
     para.id = 'winner'
-    endGame.appendChild(para)
-    if (counter === minMoves){
-        document.getElementById('winner').textContent = `You beat the game in ${counter} moves, which is the fewest number of moves possible!`
-    }else{`You beat the game in ${counter} moves! Try to do it again in fewer moves. The fewest to solve is ${minMoves}`}
-    $('#complete').dialog({
-        modal:true,
-        buttons:{
-            Ok: function() {
-                $( this ).dialog( 'close', newGame() );
-              }}
-    })
+    $endGame.append(para)
+    counter === minMoves ? $('#winner').text(`You cleared the tower in ${counter} moves!! That is the fewest possible with ${diskSelector} disks.`): $('#winner').text(`You cleared the tower in ${counter} moves! Try to do it again in fewer moves. The fewest to solve ${diskSelector} disks is ${minMoves} moves.`)
+    const closeModal = () => {
+        $modal.css('display', 'none')
+    }
+    $modal.on('click', closeModal)
+    tower3.removeEventListener('click', actions)
 }}
+
 function newGame(){
     $('.disk').remove()
+    active = false
     counter = 0
     document.getElementById('counter').textContent = counter
     build()
